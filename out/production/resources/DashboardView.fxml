@@ -19,7 +19,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WeatherAppDashboard.Run.DashBoardController">
    <children>
-      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" style="-fx-tab-min-height: 40;" stylesheets="@FXCSS/mainTabPane.css" tabClosingPolicy="UNAVAILABLE" tabMinWidth="150.0" VBox.vgrow="ALWAYS">
+      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" style="-fx-tab-min-height: 55;" stylesheets="@FXCSS/mainTabPane.css" tabClosingPolicy="UNAVAILABLE" tabMinWidth="150.0" VBox.vgrow="ALWAYS">
          <tabs>
             <Tab text="Użytkownicy">
                <content>
@@ -138,7 +138,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@icons/addIcon.png" />
+                                    <Image url="@icons/userIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -310,7 +310,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@icons/addIcon.png" />
+                                    <Image url="@icons/stationIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -436,7 +436,96 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@icons/addIcon.png" />
+                                    <Image url="@icons/measureIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                        <Tab text="Ustawienia pomiarów użytkowników">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #61a2ff;">
+                                 <children>
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Wartości graniczne dla pomiarów od użytkowników" textFill="WHITE" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <VBox prefHeight="200.0">
+                                             <children>
+                                                <Label maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Minimalna temperatura powietrza" textFill="WHITE" VBox.vgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Maksymalna temperatura powietrza" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Minimalna prędkość wiatru" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Maksymalna prędkość wiatru" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="27.0" maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Minimalne ciśnienie powietrza" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="44.0" maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Maksymalne ciśnienie powietrza" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="minTemp" alignment="CENTER" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
+                                                <TextField fx:id="maxTemp" alignment="CENTER" layoutX="10.0" layoutY="10.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
+                                                <TextField fx:id="minWindSpeed" alignment="CENTER" layoutX="10.0" layoutY="10.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
+                                                <TextField fx:id="maxWindSpeed" alignment="CENTER" layoutX="10.0" layoutY="35.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
+                                                <TextField fx:id="minPressure" alignment="CENTER" layoutX="10.0" layoutY="60.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
+                                                <TextField fx:id="maxPressure" alignment="CENTER" layoutX="10.0" layoutY="85.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="minTempTextField" maxHeight="60.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClickSaveSettingsButton" stylesheets="@FXCSS/buttonAdd.css" text="Zapisz" VBox.vgrow="ALWAYS">
+                                       <graphic>
+                                          <ImageView fitHeight="43.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@icons/saveIcon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/settingsIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -448,9 +537,9 @@
                      </stylesheets></TabPane>
                </content>
                <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/addIcon.png" />
+                        <Image url="@icons/userIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -596,9 +685,9 @@
                   </VBox>
                </content>
                <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/addIcon.png" />
+                        <Image url="@icons/plantIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -733,12 +822,12 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@icons/addIcon.png" />
+                                    <Image url="@icons/stationIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Tab>
-                        <Tab text="Tłumaczenia zachmurzen OpenWeatherMap ">
+                        <Tab text="Tłumaczenia zachmurzeń OpenWeatherMap ">
                            <content>
                               <VBox prefHeight="200.0" prefWidth="100.0">
                                  <children>
@@ -859,7 +948,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@icons/addIcon.png" />
+                                    <Image url="@icons/translateIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -870,95 +959,7 @@
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/addIcon.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Tab>
-            <Tab text="Ustawienia systemu">
-               <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #61a2ff;">
-                     <children>
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Wartości graniczne dla pomiarów od użytkowników" textFill="WHITE" VBox.vgrow="ALWAYS">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="20.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                           <children>
-                              <VBox prefHeight="200.0">
-                                 <children>
-                                    <Label maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Minimalna temperatura powietrza" textFill="WHITE" VBox.vgrow="ALWAYS">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Maksymalna temperatura powietrza" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Minimalna prędkość wiatru" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Maksymalna prędkość wiatru" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="10.0" layoutY="27.0" maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Minimalne ciśnienie powietrza" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="10.0" layoutY="44.0" maxWidth="1.7976931348623157E308" stylesheets="@FXCSS/labelBorder.css" text="Maksymalne ciśnienie powietrza" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </HBox.margin>
-                              </VBox>
-                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-                                 <children>
-                                    <TextField fx:id="minTemp" alignment="CENTER" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
-                                    <TextField fx:id="maxTemp" alignment="CENTER" layoutX="10.0" layoutY="10.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
-                                    <TextField fx:id="minWindSpeed" alignment="CENTER" layoutX="10.0" layoutY="10.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
-                                    <TextField fx:id="maxWindSpeed" alignment="CENTER" layoutX="10.0" layoutY="35.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
-                                    <TextField fx:id="minPressure" alignment="CENTER" layoutX="10.0" layoutY="60.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
-                                    <TextField fx:id="maxPressure" alignment="CENTER" layoutX="10.0" layoutY="85.0" promptText="0.0" stylesheets="@FXCSS/textFieldBorder.css" />
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets right="10.0" />
-                                 </HBox.margin>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <Button fx:id="minTempTextField" maxHeight="60.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClickSaveSettingsButton" stylesheets="@FXCSS/buttonAdd.css" text="Zapisz" VBox.vgrow="ALWAYS">
-                           <graphic>
-                              <ImageView fitHeight="43.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/saveIcon.png" />
-                                 </image></ImageView>
-                           </graphic>
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </VBox>
-               </content>
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icons/addIcon.png" />
+                        <Image url="@icons/owmIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -1093,7 +1094,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@icons/addIcon.png" />
+                                    <Image url="@icons/stationIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -1102,7 +1103,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@icons/addIcon.png" />
+                                    <Image url="@icons/sensorIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -1226,9 +1227,9 @@
                   </TabPane>
                </content>
                <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/addIcon.png" />
+                        <Image url="@icons/giosIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -1241,7 +1242,7 @@
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/updateIcon.png" />
+                        <Image url="@icons/documentationIcon.png" />
                      </image>
                   </ImageView>
                </graphic>

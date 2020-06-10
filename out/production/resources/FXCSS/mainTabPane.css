@@ -1,6 +1,6 @@
 .tab-pane
 {
--fx-tab-min-height: 40;
+-fx-tab-min-height: 45;
 }
 .tab-pane .tab{
 -fx-background-color: linear-gradient(#61a2ff, #2A5058);

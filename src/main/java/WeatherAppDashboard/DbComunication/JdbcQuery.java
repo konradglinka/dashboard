@@ -176,8 +176,11 @@ public class JdbcQuery { //Klasa zawiera metody współpracujące z bazą danych
     public void removeSelectedUserStationFromDataBase(TableView<Station>usersstationsTableView, TextArea consoleArea) throws SQLException {
         try {
             Statement stmt = connection.createStatement();
+            String deleteUselessMeasures = "DELETE FROM measuresfromusers WHERE IDUSERSTATION=" + usersstationsTableView.getSelectionModel().getSelectedItem().getId();
+            stmt.executeUpdate(deleteUselessMeasures);
             String addGiosSensorsQuerySQL = "DELETE FROM usersstations WHERE IDUSERSTATION=" + usersstationsTableView.getSelectionModel().getSelectedItem().getId();
             stmt.executeUpdate(addGiosSensorsQuerySQL);
+
             consoleArea.appendText("Wybrana stacja została usunięta \n");
         }
         catch (NullPointerException e){
